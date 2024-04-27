@@ -1,6 +1,6 @@
 import css from './MovieDetailsPage.module.css';
 import { Suspense, useState, useEffect, useRef } from 'react';
-import { useParams, Outlet, Link, useLocation } from 'react-router-dom';
+import { useParams, Outlet, NavLink, useLocation } from 'react-router-dom';
 import { getMovieById } from '../../films-api';
 import { RiArrowGoBackFill } from 'react-icons/ri';
 import { RiMovie2Line } from 'react-icons/ri';
@@ -37,10 +37,10 @@ export default function MovieDetailsPage() {
   return (
     <div>
       <div className={css.goBack}>
-        <Link to={backLinkURLRef.current}>
+        <NavLink to={backLinkURLRef.current}>
           Go back
           <RiArrowGoBackFill size={20} />
-        </Link>
+        </NavLink>
       </div>
       {movie && (
         <div>
@@ -73,14 +73,14 @@ export default function MovieDetailsPage() {
       )}
       <ul className={css.addition}>
         <li>
-          <Link to="cast">
+          <NavLink to="cast">
             <RiMovie2Line /> Cast
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to="reviews">
+          <NavLink to="reviews">
             <FaComment /> Reviews
-          </Link>
+          </NavLink>
         </li>
       </ul>
       <Suspense fallback={<b>Loading nested route...</b>}>
