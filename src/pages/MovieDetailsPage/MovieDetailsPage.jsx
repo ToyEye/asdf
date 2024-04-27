@@ -84,9 +84,9 @@ export default function MovieDetailsPage() {
           </NavLink>
         </li>
       </ul>
-      <Suspense fallback={<b>Loading nested route...</b>}>
-        <Outlet />
-      </Suspense>
+      {/* <Suspense fallback={<b>Loading nested route...</b>}> */}
+      <Outlet />
+      {/* </Suspense> */}
       {!movie && <p>Loading...</p>}
     </div>
   );
